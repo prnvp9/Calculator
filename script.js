@@ -18,6 +18,8 @@ function deleteLast() {
 function calculateResult() {
     let result = document.getElementById('result').value;
     try {
+        // Handle percentage
+        result = result.replace(/%/g, '/100');
         document.getElementById('result').value = eval(result);
     } catch (error) {
         document.getElementById('result').value = 'Error';
